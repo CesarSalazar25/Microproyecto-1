@@ -1,0 +1,7 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4 py-1" *ngFor="let pokemon of pokemons; let i = index">
+            <app-tarjeta [PokemonData]=pokemon [ArrayIndex]=i></app-tarjeta>
+        </div>
+    </div>
+</div>
