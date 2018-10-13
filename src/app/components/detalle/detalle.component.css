@@ -1,5 +1,5 @@
-/*Color texto del título*/
 
+/*Alineación de imágenes y textos*/
 h2
 {
     text-align: center;
@@ -8,14 +8,31 @@ h2
 .card
 {
     text-align: center;
+    position: relative;
 }
+
+.card-evolution
+{
+    text-align: center;
+    width: 400px;
+}
+
 
 .card-media
 {
     padding: 20px;
+    text-align: center;
 }
 
-img
+.img-type
+{
+    width:100px; 
+    height:150px;
+
+}
+
+/*Imagen de fondo*/
+.img-evolution
 {
     background-image: url('/assets/img/pokeball_fondo.png');
     background-position: center top;

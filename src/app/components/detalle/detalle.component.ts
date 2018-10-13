@@ -10,24 +10,22 @@ import { PokemonService } from '../../services/pokemon.service';
 export class DetalleComponent implements OnInit {
 
   pokemon: any = {};
+  
   //Representa el objeto/objetos pokemon de mi pokemon
   evoluciones: any[];
   imagenEvoluciones: any[];
   index: number;
-  constructor(
-    private activatedRoute: ActivatedRoute, 
-    private PokemonService: PokemonService
-  ) { 
+  constructor( private activatedRoute: ActivatedRoute, private PokemonService: PokemonService) 
+  { 
     this.activatedRoute.params.subscribe(params => {this.index = params['id']})
     this.activatedRoute.params.subscribe(params => {this.pokemon = this.PokemonService.getPokemon(params['id']);
     this.evoluciones = this.PokemonService.getEvoluciones(this.index);
-
-    //this.imagenEvoluciones = this.PokemonService.GetImagen(this.evoluciones);
   });
   }
   ngOnInit() {
   }
 
+  //Obtiene url de la imagen de la evolución:
   getImagen(pokemon: string){
     return this.PokemonService.getImageReal(pokemon);
   }

@@ -23,8 +23,5 @@ export class TarjetaComponent implements OnInit {
     //Esto es un boton al cual le dan click y tiene que redireccionar a otra pagina y modificar selectedPokemon
     this.pokemonService.updateSelectedPokemon(this.PokemonData);
     this.router.navigate(['/detalle', this.ArrayIndex]);
-    //Controlar el Id (del Array)
-    //Controlar el PokemonData de ese Id
-   // this.pokemonService.getPokemon(this.index)
   }
 }

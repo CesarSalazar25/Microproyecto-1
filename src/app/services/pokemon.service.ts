@@ -5,7 +5,7 @@ import { element } from 'protractor';
   providedIn: 'root'
 })
 export class PokemonService {
-  //Data del pokedex
+  //Data de la pokedex:
   selectedPokemon;
   pokemons= [
     {

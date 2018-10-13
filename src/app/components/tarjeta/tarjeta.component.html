@@ -1,10 +1,11 @@
-<div class="card-header">
-    <p>Pokemon numero: {{PokemonData.pkdx_id}}</p>
-</div>
-<div class="card">
-    <img class="card-img-top" src="{{PokemonData.art_url}}" alt="Card image cap"> 
+<div class="container">
     <div class="card-body">
-            <h5 class="card-title">{{PokemonData.name}}</h5>
-            <button (click)="VerDetalle()" type="button" class="btn btn-danger"> <b>Ver detalle</b> </button>
-    </div>
+        <h5> <b>#{{PokemonData.pkdx_id}}</b> </h5>
+        <!--Imagen del Pokemon-->
+        <img src="{{PokemonData.art_url}}">
+        <br> 
+        <h5 class="card-title"> <b>{{PokemonData.name}}</b> </h5>
+        <!--Se miran los detalles del Pokemon-->
+        <button (click)="VerDetalle()" type="button" class="btn btn-danger"> <b>Ver detalle</b> </button>
+    </div>    
 </div>

@@ -6,31 +6,58 @@
     <div class="card-body">
         <p>{{pokemon.description}}</p>
         <h4> <b>Types:</b> </h4>
-        <ul *ngFor="let type of pokemon.types">{{type}}</ul>
+        <!--Si el tipo coincide muestra una imagen que lo identifica-->
+        <div *ngFor="let type of pokemon.types">
+            <img class="img-type" *ngIf="type == 'grass'" src="/assets/img/types/grass.png">
+            <img class="img-type" *ngIf="type == 'water'" src="/assets/img/types/water.png">
+            <img class="img-type" *ngIf="type == 'ground'" src="/assets/img/types/ground.png">
+            <img class="img-type" *ngIf="type == 'dark'" src="/assets/img/types/dark.png">
+            <img class="img-type" *ngIf="type == 'psychic'" src="/assets/img/types/psychic.png">
+            <img class="img-type" *ngIf="type == 'rock'" src="/assets/img/types/rock.png">
+            <img class="img-type" *ngIf="type == 'steel'" src="/assets/img/types/steel.png">
+            <img class="img-type" *ngIf="type == 'fire'" src="/assets/img/types/fire.png">
+            <img class="img-type" *ngIf="type == 'fairy'" src="/assets/img/types/fairy.png">
+            <img class="img-type" *ngIf="type == 'poison'" src="/assets/img/types/poison.png">
+            <img class="img-type" *ngIf="type == 'fighting'" src="/assets/img/types/fighting.png">
+            <img class="img-type" *ngIf="type == 'bug'" src="/assets/img/types/bug.png">
+            <img class="img-type" *ngIf="type == 'flying'" src="/assets/img/types/flying.png">
+            <img class="img-type" *ngIf="type == 'electric'" src="/assets/img/types/electric.png">
+            <img class="img-type" *ngIf="type == 'dragon'" src="/assets/img/types/dragon.png">
+            <img class="img-type" *ngIf="type == 'ice'" src="/assets/img/types/ice.png">
+            <img class="img-type" *ngIf="type == 'normal'" src="/assets/img/types/normal.png">
+            <img class="img-type" *ngIf="type == 'ghost'" src="/assets/img/types/ghost.png">
+        </div>
     </div>
 </div>
 <hr>
 <h2><b>~ Evolutions ~</b></h2>
-<div class="card card-media">
-    <br> 
-    <div *ngIf="evoluciones.length == 0">
-        <h4>No have evolutions...</h4>
-        <hr>
-    </div>
-    <div *ngIf="evoluciones.length > 0">
-        <div *ngIf="pokemon.evolutions.length > 0">
-            <!--Recorre el array de Evoluciones hasta encontrar la correspondiente-->
-            <div *ngFor="let evolucion of evoluciones; let i = index">
-                <br> 
-                <h4> <b>{{evolucion.to}}</b> </h4>
-                <img src="{{getImagen(evolucion.to)}}">
+        <div class="card card-media"> 
+            <div *ngIf="evoluciones.length == 0">
+                <h4>No have evolutions...</h4>
                 <hr>
-                <h4><b>{{evolucion.method}}</b></h4>
-                <h3> <b>{{evolucion.level}}</b> </h3>
             </div>
+            <div *ngIf="evoluciones.length > 0">
+                <div *ngIf="pokemon.evolutions.length > 0">
+                    <!--Recorre el array de Evoluciones hasta encontrar la correspondiente-->
+                    <div *ngFor="let evolucion of evoluciones; let i = index">
+                        <br> 
+                        <h4> <b>{{evolucion.to}}</b> </h4>
+                        <!--Obtiene la imagen de su evolución por un método-->
+                        <img class="img-evolution" src="{{getImagen(evolucion.to)}}">
+                        <br><br>
+                        <!--Popover que muestra cómo evoluciona-->
+                        <button type="button" class="btn btn-warning" style="text-align:center"
+                            popover="{{evolucion.method}}"
+                            popoverTitle="{{evolucion.level}}"
+                            placement="bottom">
+                            <h4><b> How to Evolve?</b></h4>
+                        </button>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <!--Regresa al Home-->
+            <button class="btn btn-danger" [routerLink]="['home']" ><b>Regresar</b></button>
         </div>
-    </div>
-    <button class="btn btn-danger" [routerLink]="['home']" ><b>Regresar</b></button>
-</div>
 <br>
 </div>
