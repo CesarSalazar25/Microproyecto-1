@@ -1,0 +1,25 @@
+/*Color texto del título*/
+
+h2
+{
+    text-align: center;
+}
+
+.card
+{
+    text-align: center;
+}
+
+.card-media
+{
+    padding: 20px;
+}
+
+img
+{
+    background-image: url('/assets/img/pokeball_fondo.png');
+    background-position: center top;
+    background-size: 300px 300px;
+    width:300px; 
+    height:300px;
+}

@@ -1,50 +1,36 @@
 <div class="container">
-    <h2>{{pokemon.name}}</h2>
-    <p>{{pokemon.description}}</p>
-    <ul>types</ul>
-    <!-- Si existe hacer esto, si no Mostrar no tiene tipos -->
-    <li *ngFor="let type of pokemon.types">{{type}}</li>
-    <hr>
 
+    <h2><b>~ {{pokemon.name}} ~</b></h2>
+
+<div class="card">    
+    <div class="card-body">
+        <p>{{pokemon.description}}</p>
+        <h4> <b>Types:</b> </h4>
+        <ul *ngFor="let type of pokemon.types">{{type}}</ul>
+    </div>
+</div>
+<hr>
+<h2><b>~ Evolutions ~</b></h2>
+<div class="card card-media">
+    <br> 
     <div *ngIf="evoluciones.length == 0">
-        <h4>Este pokemon es gay</h4>
+        <h4>No have evolutions...</h4>
+        <hr>
     </div>
     <div *ngIf="evoluciones.length > 0">
-        <h4>Evoluciones</h4>
         <div *ngIf="pokemon.evolutions.length > 0">
+            <!--Recorre el array de Evoluciones hasta encontrar la correspondiente-->
             <div *ngFor="let evolucion of evoluciones; let i = index">
-                <p>{{evolucion.to}}</p>
+                <br> 
+                <h4> <b>{{evolucion.to}}</b> </h4>
                 <img src="{{getImagen(evolucion.to)}}">
-                <p>{{evolucion.method}}</p>
-                <p>{{evolucion.level}}</p>
+                <hr>
+                <h4><b>{{evolucion.method}}</b></h4>
+                <h3> <b>{{evolucion.level}}</b> </h3>
             </div>
         </div>
     </div>
+    <button class="btn btn-danger" [routerLink]="['home']" ><b>Regresar</b></button>
 </div>
-
-<!-- { "level": 32, "method": "level_up", "to": "Venusaur", "_id": "557a723980a20c9db3bc31e4" } -->
-<!-- evolucion es un array de mierda -->
-<!-- En el detalle se tiene que mostrar NOMBRE, DESCRIPCION, TIPOS DEL POKEMON, 
-   IF ( EVOLUCION ) // NOMBRE EVOLUCION - IMAGEN EVOLUCION --NIVEL EVOLUCION -- METODO EVOLUCION - -->
-<!-- {
-    "_id": "557a723880a20c9db3bc31c2",
-    "pkdx_id": 1,
-    "national_id": 1,
-    "name": "Bulbasaur",
-    "__v": 3,
-    "image_url": "http://pokeapi.co/media/img/1.png",
-    "description": "Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.  Bulbasaur can be seen napping in bright sunlight. There is a seed on its back. By soaking up the sun's rays, the seed grows progressively larger.",
-    "art_url": "http://assets22.pokemon.com/assets/cms2/img/pokedex/full/001.png",
-    "types": [
-      "poison",
-      "grass"
-    ],
-    "evolutions": [
-      {
-        "level": 16,
-        "method": "level_up",
-        "to": "Ivysaur",
-        "_id": "557a723880a20c9db3bc31c3"
-      }
-    ]
-  }, -->
+<br>
+</div>

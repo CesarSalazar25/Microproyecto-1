@@ -1,0 +1,19 @@
+/*Fondo de la tarjeta e Imagen*/
+img
+{
+    background-image: url('/assets/img/pokeball_fondo.png');
+    background-position: center top;
+    background-size: 300px 300px;
+    width:300px; 
+    height:300px;
+}
+
+/*Card*/
+card
+{
+    text-align: center;
+    padding: 20px;
+}
+
+
+
