@@ -1,4 +1,6 @@
-# MicroProyecto1
+# MicroProyecto1-Pokédex
+
+Microproyecto para la materia de Sistemas de la Información (1819-1), realizado por César Salazar, Carlos De Castro y Luis González.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
